@@ -1,17 +1,8 @@
 package com.app.product.entities;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
 import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "PRODUCT")
@@ -28,21 +19,11 @@ public class Product {
 	private String typeId;
 	
 	
-	@OneToOne(cascade=CascadeType.ALL,fetch = FetchType.EAGER)
-    @JoinColumn(name = "PRICE_ID" ,referencedColumnName = "PRICE_ID" )
-	private Price price;
-	
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "PROMOTION_ID", referencedColumnName = "PROMOTION_ID", nullable = true)
-	private Promotion promotion;
-	
-	@OneToOne(cascade=CascadeType.ALL,fetch = FetchType.EAGER)
-    @JoinColumn(name = "INVENTORY_ID")
-	private Inventory inventory;
-	
+	private String priceId;
 
-	
+	private String promotionId;
+
+	private String invetoryId;
 
 	public String getName() {
 		return name;
@@ -68,30 +49,27 @@ public class Product {
 		this.id = id;
 	}
 
-	public Price getPrice() {
-		return price;
+	public String getPriceId() {
+		return priceId;
 	}
 
-	public void setPrice(Price price) {
-		this.price = price;
+	public void setPriceId(String priceId) {
+		this.priceId = priceId;
 	}
 
-	public Promotion getPromotion() {
-		return promotion;
+	public String getPromotionId() {
+		return promotionId;
 	}
 
-	public void setPromotion(Promotion promotion) {
-		this.promotion = promotion;
+	public void setPromotionId(String promotionId) {
+		this.promotionId = promotionId;
 	}
 
-	public Inventory getInventory() {
-		return inventory;
+	public String getInvetoryId() {
+		return invetoryId;
 	}
 
-	public void setInventory(Inventory inventory) {
-		this.inventory = inventory;
+	public void setInvetoryId(String invetoryId) {
+		this.invetoryId = invetoryId;
 	}
-	
-	
-
 }
