@@ -31,6 +31,12 @@ public class ProductResource {
 		final Product saved = productService.add(product);
 		return ResponseEntity.ok().body(saved);
 	}
+
+	@RequestMapping(path = "/v1/products", method = RequestMethod.PUT)
+	public ResponseEntity<Product> updateProduct(@RequestBody final Product product){
+		final Product saved = productService.add(product);
+		return ResponseEntity.ok().body(saved);
+	}
 	
 	@RequestMapping(path = "/v1/products", method = RequestMethod.GET)
 	public ResponseEntity<List<Product>> getProducts(){

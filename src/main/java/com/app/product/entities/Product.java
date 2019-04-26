@@ -25,6 +25,26 @@ public class Product {
 
 	private String invetoryId;
 
+	public Product() {
+	}
+
+	public Product(String name, String typeId, String priceId, String promotionId, String invetoryId) {
+		this.name = name;
+		this.typeId = typeId;
+		this.priceId = priceId;
+		this.promotionId = promotionId;
+		this.invetoryId = invetoryId;
+	}
+
+	public Product(String id, String name, String typeId, String priceId, String promotionId, String invetoryId) {
+		this.id = id;
+		this.name = name;
+		this.typeId = typeId;
+		this.priceId = priceId;
+		this.promotionId = promotionId;
+		this.invetoryId = invetoryId;
+	}
+
 	public String getName() {
 		return name;
 	}

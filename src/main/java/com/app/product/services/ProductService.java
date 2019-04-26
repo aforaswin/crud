@@ -14,4 +14,6 @@ public interface ProductService {
 	
 	Product getProduct(final String id);
 
+	Product update(Product product);
+
 }
